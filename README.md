@@ -9,7 +9,7 @@ Calculator file runs at angular 4200 localhost, Rest-api file runs at 3000 local
  git clone https://github.com/mehmetkirsakal/Calculator-with-Angular-Api-and-Database.git
 ```
 2. Open project directory in Visual Studio Code
-3. In Rest-Api directory there is index.js, you need a database to work with this project. i used postgreSQL for my database, create your database and put database integration codes accordingly in const client = new Client({}) section.
+3. In Rest-Api directory there is index.js, you need a database to work with this project. i used postgreSQL for my database, create your database and put database integration codes accordingly in const client = new Client( { } ) section.
 4. Go to Rest-Api directory with cd resp-api
 5. Run api service  with below code (host :3000)
 ```cmd
