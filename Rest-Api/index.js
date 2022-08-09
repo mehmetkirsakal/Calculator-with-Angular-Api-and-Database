@@ -16,6 +16,13 @@ const client = new Client({
 
 client.connect();
 
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'POST,GET,PUT,DELETE');
+    res.header("Access-Control-Allow-Headers"," Content-Type, Access-Control-Allow-Headers, X-Requested-With")
+    next();
+  });
+
 
 ////////////////////////// GET ///////////////////////////////
 app.get('/api/users',(req,res) =>{
@@ -41,7 +48,7 @@ app.get('/api/users/:data',(req,res) =>{
 app.get('/api/sum',(req,res) => {
     client.query(`SELECT SUM(data) from public.users`, (err,result) => {
         if(!err){
-            res.send("Sum: " + result.rows[0].sum);
+            res.send(result.rows);
         } else if(err){
             res.send(err.message);
         }
