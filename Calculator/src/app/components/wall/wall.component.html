@@ -1,0 +1,43 @@
+
+
+<div class="new-post">
+    <input type="text"  placeholder="Ekleme,silme veya güncelleme yapılacak değer" #input>
+    <br>
+    <input type="text"   placeholder="Yeni değer" #update>
+    <div class="align-right new-post-buttons">
+        <div class="card">
+            <div class="card-actions">
+                <a href="" class="btn btn-primary" style="margin-right: 2%;" (click)="Update(input,update)">Güncelle</a>
+                <a class="btn btn-primary" style="margin-right: 25%;" (click)="Find(input);Show();">Ara</a>
+                <a href="" class="btn btn-warning" (click)="Delete(input)">Data sil</a>
+                <a  href ="" class="btn btn-primary" (click)="Send(input)">Gönder</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="box bordered">
+    <div class="card">
+        <div class="card-actions">
+            <a href="http://localhost:4200/" class="btn btn-danger" (click)="DeleteAll()">Database Sil</a>
+            <button class="btn btn-primary" (click)="ShowAll()">Bütün Data</button>
+          <p class="align-right font-mid" style="float: right;">Toplam: {{this.sum}}</p>
+        </div>
+    </div>
+
+</div>
+<div *ngFor="let  element of elements">
+    <div class="box bordered" *ngIf="this.showClicked">
+        <div class="card">
+            <p>data: {{element.data}}</p>
+        </div>
+    </div>
+</div>
+
+<div *ngFor="let  post of posts">
+    <div class="box bordered" *ngIf="this.showAllClicked">
+        <div class="card">
+            <p>data: {{post.data}}</p>
+        </div>
+    </div>
+</div>
