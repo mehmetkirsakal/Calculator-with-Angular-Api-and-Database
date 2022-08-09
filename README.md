@@ -1,4 +1,4 @@
-#Calculator with database and api
+# Calculator with database and api
 
 Calculator file runs at angular 4200 localhost, Rest-api file runs at 3000 localhost. 
 
