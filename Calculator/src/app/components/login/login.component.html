@@ -1,6 +1,8 @@
 <header>Login</header>
 <div class="new-post">
+    <p *ngIf="this.auth.error && this.auth.error.length>0 " style="color: Darkred; font-size: small"> {{this.auth.error}} </p>
     <div (keyup.enter)="this.auth.logIn(id.value,password.value)">
+        
         <input type="text"  placeholder="Kullanıcı adı" #id>
         <br>
         <input type="text"   placeholder="Şifre" #password>

@@ -17,7 +17,7 @@ export class LoginGuardService {
     ): boolean {
       let logged = this.auth.isLoggedIn();
 
-      if(logged || localStorage.getItem('username') === 'admin' && localStorage.getItem('password') === 'admin'){
+      if(logged){
         
         return true;
       }
