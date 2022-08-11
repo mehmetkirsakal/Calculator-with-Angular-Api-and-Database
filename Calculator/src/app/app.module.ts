@@ -7,11 +7,24 @@ import { HeaderComponent } from './components/header/header.component';
 import { WallComponent } from './components/wall/wall.component';
 import { HttpClientModule} from '@angular/common/http'
 import { PostService } from './services/post.service';
+import { LoginComponent } from './components/login/login.component';
+import { LoginGuardService } from './services/login-guard.service';
 const routeConfig: Route[] = [
   {
     path: '',
-    component: WallComponent
+    component: WallComponent,
+    canActivate: [LoginGuardService]
   },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: '**',
+    redirectTo: "",
+    pathMatch: 'full'
+    
+  }
 
 ]
 
@@ -19,7 +32,8 @@ const routeConfig: Route[] = [
   declarations: [
     AppComponent,
     HeaderComponent,
-    WallComponent
+    WallComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,13 @@
+<header>Login</header>
+<div class="new-post">
+    <div (keyup.enter)="this.auth.logIn(id.value,password.value)">
+        <input type="text"  placeholder="Kullanıcı adı" #id>
+        <br>
+        <input type="text"   placeholder="Şifre" #password>
+        <div class="align-right new-post-buttons">
+            <div class="card">
+                <div class="card-actions">
+                 <button class="btn btn-primary" (click)="this.auth.logIn(id.value,password.value)" >Giriş Yap</button>
+    </div>
+    
+</div>
